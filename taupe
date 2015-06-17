@@ -1,0 +1,9 @@
+#!/bin/sh
+negative="terrible and frightening"
+echo "What is taupe?"
+read opinion
+if [ "$opinion" = "$negative" ]; then
+  echo "taupe is $opinion!"
+else
+  echo "YOU ARE WRONG"
+fi
