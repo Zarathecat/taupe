@@ -1,9 +1,32 @@
 #!/bin/sh
-negative="terrible and frightening"
 echo "What is taupe?"
 read opinion
-if [ "$opinion" = "$negative" ]; then
-  echo "taupe is $opinion!"
-else
-  echo "YOU ARE WRONG"
-fi
+
+for i in $(cat negative_words); do 
+#echo "$i"
+  if [ "$opinion" = "$i" ]; then
+    echo "taupe is $opinion!"
+    exit
+  fi
+done
+
+for j in $(cat positive_words); do
+#echo "$j"
+  if [ "$opinion" = "$j" ]; then
+    echo "YOU ARE WRONG"
+    exit
+  fi
+done
+
+echo "I don't know that word. Is it positive or negative?"
+  read posneg
+  if [ "$posneg" = "positive" ]; then
+    echo "$opinion" >> positive_words
+    exit
+  elif [ "$posneg" = "negative" ]; then
+      echo "$opinion" >> negative_words
+      exit
+  else
+    echo "I don't understand anything! Goodbye!"
+    exit
+  fi
