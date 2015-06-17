@@ -1,0 +1,5 @@
+*Licensing of some description
+*Recognise more than just 'positive' and 'negative' as descriptions of opinions
+*Don't silently overwrite files named positive_words and negative_words in 
+ working directory
+*Tidy into pretty functions and all that
